@@ -2,6 +2,7 @@
 #define BODY_H
 
 #include"Vector2.h"
+#include"RotMatrix.h"
 
 // The Basic Describe of Object 
 class Body{
@@ -22,6 +23,7 @@ class Body{
         Vector2 shape;//形状大小（外接矩形？）
         //冲量，扭矩
         //摩擦？
+        //torque,force
     public:
         //Body()=default;
         Body():position(Vector2(0.0f,0.0f)),

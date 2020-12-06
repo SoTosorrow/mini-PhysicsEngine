@@ -67,9 +67,5 @@ class Vector2{
 };
 //Vector3(x,y,z)->Vector2(x,y)
 //x,y->x,y;z->x*z,y*z  x,y为方向,z为大小
-class Matrix{
-
-};
-
 
 #endif
