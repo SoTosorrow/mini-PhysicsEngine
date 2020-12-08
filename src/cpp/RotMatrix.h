@@ -11,6 +11,7 @@ class RotMatrix{
         Vector2 col1;
         Vector2 col2;
     public:
+        RotMatrix()=default;
         RotMatrix(float angle){
             float cos_ = cosf(angle);
             float sin_ = sinf(angle);
@@ -26,6 +27,20 @@ class RotMatrix{
 
         RotMatrix Transpose(){
             return RotMatrix(Vector2(col1.x, col2.x), Vector2(col1.y, col2.y));
+        }
+        RotMatrix Invert(){
+            float a=col1.x,b=col2.x;
+            float c=col1.y,d=col2.y;
+            RotMatrix temp;
+            //cross Vector
+            float dot = a*d - b*c;
+            //assert(dot!=0.0f);
+            dot = 1.0f/dot;
+            temp.col1.x = dot*d;
+            temp.col1.y = -1*dot*c;
+            temp.col2.x = -1*dot*b;
+            temp.col2.y = dot*a;
+            return temp;
         }
 };
 
